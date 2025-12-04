@@ -8,7 +8,7 @@ public class Cube {
     }
 
     public void setSide(int side) {
-        if (side > 1){
+        if (side < 1){
             throw new IllegalArgumentException("A cube's side must be equal to or greater than 1!");
         }
         this.side = side;
@@ -16,7 +16,7 @@ public class Cube {
     }
 
     public int calculateSurfaceArea() {
-        return side * side;
+        return side * side * 6;
     }
 
     public int calculateVolume() {
@@ -37,7 +37,6 @@ public class Cube {
     }
 
     public Cube(int side) {
-        this.side = side;
+        setSide(side);
     }
-
 }
